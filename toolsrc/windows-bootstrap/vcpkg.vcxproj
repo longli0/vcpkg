@@ -34,13 +34,13 @@
     </When>
     <Otherwise>
       <PropertyGroup>
-          <VcpkgUseStdFilesystem>1</VcpkgUseStdFilesystem>
+          <VcpkgUseStdFilesystem>0</VcpkgUseStdFilesystem>
       </PropertyGroup>
     </Otherwise>
   </Choose>
   <ItemDefinitionGroup>
     <ClCompile>
-      <PreprocessorDefinitions>VCPKG_USE_STD_FILESYSTEM=$(VcpkgUseStdFilesystem);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>VCPKG_USE_STD_FILESYSTEM=$(VcpkgUseStdFilesystem);_SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
